@@ -11,10 +11,18 @@ func main() {
 	var intList list.List
 
 	intList.PushBack(5)
+	intList.PushBack(6)
+	intList.PushBack(7)
 	intList.PushBack(10)
-	intList.PushFront(15)
+	intList.PushFront(0)
 
 	display(intList)
+
+	println("Removed from Front :", intList.Front().Value.(int))
+
+	intList.Remove(intList.Front())
+
+	println("Removed from Back :", intList.Back().Value.(int))
 
 	intList.Remove(intList.Front())
 
