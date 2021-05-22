@@ -23,12 +23,17 @@ type Adapter struct {
 //Adapter class method process
 func (adapter Adapter) process() {
 	fmt.Println("Adapter process")
-	adapter.adaptee.convert()
+
+	var val = adapter.adaptee.convert()
+
+	fmt.Println(val)
 }
 
 // Adaptee class method convert
-func (adaptee Adaptee) convert() {
+func (adaptee Adaptee) convert() (adapterType int) {
 	fmt.Println("Adaptee convert method")
+	adaptee.adapterType = 10
+	return adaptee.adapterType
 }
 
 // main method
